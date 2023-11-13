@@ -8,11 +8,11 @@ using namespace std;
 
 void hanoi(int num, char o, char d, char a) {
     if (num == 1) {
-        cout << "Mueva el Disco " << num << " desde " << o << " hasta " << d << endl;
+        cout << "Se mueve el Disco " << num << " desde " << o << " hasta " << d << endl;
     }
     else {
         hanoi(num - 1, o, a, d);
-        cout << "Mueva el Disco " << num << " desde " << o << " hasta " << d << endl;
+        cout << "Se mueve el Disco " << num << " desde " << o << " hasta " << d << endl;
         hanoi(num - 1, a, d, o);
     }
 }
@@ -24,10 +24,11 @@ int main() {
     cout << "Las clavijas son A, B y C" << endl;
     cout << "Número de discos: ";
     cin >> n;
-    
+
     hanoi(n, 'A', 'C', 'B');
 
-    cout << "Cantidad de movimientos: " << pow(2, n) - 1 << endl;
+    cout << "En total se resuelve con " << n << " discos." << endl;
+    cout << "Con la cantidad de movimientos: " << pow(2, n) - 1 << endl;
 
     return 0;
 }
